@@ -2,13 +2,13 @@
 CS 30 assignment 
 
 Pseudocode: 
-<<Set up roles for players to choose(Players can transfer the role they are playing above lvl 30)
+<<Set up roles for players to choose(Players can transfer the role of what they're playing after their get to lvl 30)
 1.Knight 
 can transfer to "Dragon Knight" "The King" "God of War"
 2.Swordsman
 can transfer to "The Master" "Star lord" "Demon" 
 3.Mage 
-can transfer to "Elementalist” "Angle" "Magician"
+can transfer to "Elementalist” "Angel" "Magician"
 <<Set up basic properties
 1. HP 2. AD 3. Ap 4. Movement Speed 5. Flexbility 
 Basic HP Knight > Swordsman > Mage
@@ -23,9 +23,13 @@ Long sword (For Swordsman)
 Staff (for Mage)
 A shop for players to fix, upgrade, buy weapons (Energy stones can be used for everything)
 Players can use abilities on their picked roles after lvl 5 and a upgarded ability after tranfer
-Player can upgrade their abilities too by earning spell points everytime they leveled up 
+Player can upgrade their abilities too by earning spell points everytime they leveled up (Not a different ability, only damage increase)
 "Players will have a bar charging from 0%-100% from taking or dealing damages instead of mana"
 <<Set up rewards from beating monsters 
 Different amount of energy stones from different level of monsters
  (You can use energy stones to level up youself and weapons)
-Set up different maps 
+ Elemental stones which can add up on weapons to have a Special bonus
+<<Set up different maps 
+Any map be created by one or two element and the monster lives in there two 
+The speical element bonus on weapons is for counter 
+(Like a Long sword with fire bonus with increase its damage on attacking ice monsters, wood monsters and decrease on water monsters.)
