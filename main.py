@@ -95,7 +95,6 @@ def roles_overall_inventory(roles, overall_inventory):
 
 
 def beginner_weapon(role):
-    while True:
         if role == "1":
             print("\n")
             current_inventory = []
@@ -103,7 +102,6 @@ def beginner_weapon(role):
             for c_i in current_inventory:
                 print("Your current inventory is: ")
                 print(f"-{c_i}")
-                break
         elif role == "2":
             print('\n')
             current_inventory = []
@@ -111,7 +109,6 @@ def beginner_weapon(role):
             for c_i in current_inventory:
                 print("Your current inventory is: ")
                 print(f"-{c_i}")
-                break
         elif role == "3":
             print("\n")
             current_inventory = []
@@ -119,7 +116,6 @@ def beginner_weapon(role):
             for c_i in current_inventory:
                 print("Your current inventory is: ")
                 print(f"-{c_i}")
-                break
         else:
             print("invalid 5 input")
 
@@ -184,7 +180,7 @@ def actionA(role):
         actA = input("\nWhat to do now? \n-explore \n-quit \n-inventory\
                      \n-overallinventory \n-worldmap \n:")
         # after player input, print out the action choosen by the player
-        actions_to_do_A = ["explore", "quit", "inventory",\
+        actions_to_do_A = ["explore", "quit", "inventory",
                            "overallinventory", "worldmap"]
         if actA == (actions_to_do_A[0]):
             direction_to_go(role)
