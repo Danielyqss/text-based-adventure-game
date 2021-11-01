@@ -1,7 +1,7 @@
 #Course: CS 30 
 #Period: 1
 #Date created: 21/09/21
-#Date last modified: 21/10/19
+#Date last modified: 21/10/29
 #Name: Xinhao Liu
 #Assignment: RPG 
 #Instructor: Janice Cotcher
@@ -10,18 +10,18 @@
 import sys
 import random
 
-maps = {"Home": {"Place where players get their hp back"},
-        "Shop": {"Place where players can buy and upgrade weapons and armor"},
-        "Castle": {"E Tier map, E Tier monsters appear, \
-                   E Tier weapons dropping"},
-        "Floating City": {"D Tier map, D Tier monsters appear, \
-                          D Tier weapons. armor dropping"},
-        "War relics": {"C Tier map, C Tier monsters appear, \
-                       C Tier weapons, armor dropping"},
-        "Kingdom Frontier": {"B Tier map, B Tier monsters appear, \
-                             B Tier weapons, armor dropping"},
-        "King's Row": {"A Tier map, A Tier monsters appear, \
-                       A Tier weapons, armor dropping"}}
+maps = {"Home": {"Place where you can get your hp back"},
+        "Shop": {"Place where you can buy and upgrade weapons and armor"},
+        "Castle": {"E Tier map, E Tier monsters appear,\
+                   \n E Tier weapons dropping"},
+        "Floating City": {"D Tier map, D Tier monsters appear,\
+                          \n D Tier weapons. armor dropping"},
+        "War relics": {"C Tier map, C Tier monsters appear,\
+                       \n C Tier weapons, armor dropping"},
+        "Kingdom Frontier": {"B Tier map, B Tier monsters appear,\
+                             \n B Tier weapons, armor dropping"},
+        "King's Row": {"A Tier map, A Tier monsters appear,\
+                       \n A Tier weapons, armor dropping"}}
 
 
 def game_map(maps):
@@ -46,7 +46,6 @@ def pick_ur_role(roles_to_pick):
         print(f"\n{rolc}")
         for properties in roles_to_pick[rolc]:
             print(f"{properties}")
-pick_ur_role(roles_to_pick)
 
 
 
@@ -154,23 +153,23 @@ def pick_your_role():
         # after player input print out properties
         if role == "1":
             print("\n")
-            Property_of_Knight = "Knight: \nHealth = 80 \nAttack = 20 \n\
-            Movement speed = 40"
-            print(Property_of_Knight)
+            Property_of_Knight = "Knight: \nHealth = 80 \nAttack = 20\
+                                  \nMovement speed = 40\n"
+            print("You've picked 'Knight':\n" + Property_of_Knight)
             return role
             break
         elif role == "2":
             print("\n")
-            Property_of_Swordsman = "Swordsman: \nHealth = 65 \nAttack = 30 \n\
-            Movement speed = 40"
-            print(Property_of_Swordsman)
+            Property_of_Swordsman = "Swordsman: \nHealth = 65 \nAttack = 30\
+                                     \nMovement speed = 40\n"
+            print("You've picked 'Swordsman': \n", Property_of_Swordsman)
             return role
             break
         elif role == "3":
             print("\n")
-            Property_of_Mage = "Mage: \nHealth = 60 \nAttack = 35 \n\
-            Movement speed = 40"
-            print(Property_of_Mage)
+            Property_of_Mage = "Mage: \nHealth = 60 \nAttack = 35\
+                                \nMovement speed = 40\n"
+            print("You've picked 'Mage': \n" + Property_of_Mage)
             return role
             break
         elif role == "quit":
@@ -185,7 +184,7 @@ def actionA(role):
         actA = input("\nWhat to do now? \n-explore \n-quit \n-inventory\
                      \n-overallinventory \n-worldmap \n:")
         # after player input, print out the action choosen by the player
-        actions_to_do_A = ["explore", "quit", "inventory", 
+        actions_to_do_A = ["explore", "quit", "inventory",\
                            "overallinventory", "worldmap"]
         if actA == (actions_to_do_A[0]):
             direction_to_go(role)
