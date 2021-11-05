@@ -1,10 +1,10 @@
-#Course: CS 30 
-#Period: 1
-#Date created: 21/09/21
-#Date last modified: 21/11/05
-#Name: Xinhao Liu
-#Assignment: RPG Menu and Inventory
-#Instructor: Janice Cotcher
+# Course: CS30
+# Period: 1
+# Date created: 21/09/21
+# Date last modified: 21/11/05
+# Name: Xinhao Liu
+# Assignment: RPG Menu and Inventory
+# Instructor: Janice Cotcher
 
 
 import sys
@@ -41,12 +41,12 @@ roles_to_pick = {"Knight":
                  {"properties: \nHealth = 60 \nAttack damage = 35\
                  \nMovement speed = 40 "}}
 
+
 def pick_ur_role(roles_to_pick):
     for rolc in roles_to_pick:
         print(f"\n{rolc}")
         for properties in roles_to_pick[rolc]:
             print(f"{properties}")
-
 
 
 overall_inventory = {"All levels of weapons for Knight:":
