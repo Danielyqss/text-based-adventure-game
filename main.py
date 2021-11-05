@@ -1,9 +1,9 @@
 #Course: CS 30 
 #Period: 1
 #Date created: 21/09/21
-#Date last modified: 21/10/29
+#Date last modified: 21/11/05
 #Name: Xinhao Liu
-#Assignment: RPG 
+#Assignment: RPG Menu and Inventory
 #Instructor: Janice Cotcher
 
 
