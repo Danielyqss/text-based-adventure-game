@@ -3,122 +3,21 @@
 # Date created: 21/09/21
 # Date last modified: 21/11/05
 # Name: Xinhao Liu
-# Assignment: RPG Menu and Inventory
+# Assignment: RPG 
 # Instructor: Janice Cotcher
 
-
+from map import map_look
+import character
+from map import maps
+from character import roles_to_pick
+from inventory import overall_inventory
 import sys
 import random
-
-maps = {"Home": {"Place where you can get your hp back"},
-        "Shop": {"Place where you can buy and upgrade weapons and armor"},
-        "Castle": {"E Tier map, E Tier monsters appear,\
-                   \n E Tier weapons dropping"},
-        "Floating City": {"D Tier map, D Tier monsters appear,\
-                          \n D Tier weapons. armor dropping"},
-        "War relics": {"C Tier map, C Tier monsters appear,\
-                       \n C Tier weapons, armor dropping"},
-        "Kingdom Frontier": {"B Tier map, B Tier monsters appear,\
-                             \n B Tier weapons, armor dropping"},
-        "King's Row": {"A Tier map, A Tier monsters appear,\
-                       \n A Tier weapons, armor dropping"}}
+import inventory
+import map
 
 
-def game_map(maps):
-    print("\n")
-    for descriptions in maps:
-        print(f"{descriptions}: ")
-        for item in maps[descriptions]:
-            print(f"-{item}")
-
-roles_to_pick = {"Knight":
-                 {"properties: \nHealth = 80 \nAttack damage = 20\
-                 \nMovement speed = 40"},
-                 "Swordsman":
-                 {"properties: \nHealth = 65 \nAttack damage = 30\
-                 \n Movement speed = 40"},
-                 "Mage":
-                 {"properties: \nHealth = 60 \nAttack damage = 35\
-                 \nMovement speed = 40 "}}
-
-
-def pick_ur_role(roles_to_pick):
-    for rolc in roles_to_pick:
-        print(f"\n{rolc}")
-        for properties in roles_to_pick[rolc]:
-            print(f"{properties}")
-
-
-overall_inventory = {"All levels of weapons for Knight:":
-                     {"Sword, Shield":
-                      {"description": "level: E Tier Weapon",
-                       "damage": 5, "protection": 5},
-                      "Dragon's Sword, Shield":
-                      {"description": "level: B Tier Weapon",
-                       "damage": 15, "protection": 15},
-                      "Holy Gift":
-                      {"description": "level: S Tier Weapon",
-                       "damage": 30, "protection": 30}},
-                     "All levels of weapons for Swordsman:":
-                         {"Long Sword":
-                          {"description": "level: E Tier Weapon",
-                           "damage": 10, "protection": 0},
-                          "Sword of Victory":
-                          {"description": "level: B Tier Weapon",
-                           "damage": 20, "protection": 0},
-                          "Sanction":
-                          {"description": "level: S Tier Weapon",
-                           "damage": 50, "protection": 0}},
-                     "All levels of weapons for Mage:":
-                         {"Staff":
-                          {"description": "level: E Tier Weapon",
-                           "damage": 12, "protection": 0},
-                          "Staff of Flowing Water":
-                          {"description": "level B Tier Weapon",
-                           "damage": 24, "protection": 0},
-                          "Infinity Staff":
-                          {"description": "level S Tier Weapon",
-                           "damage": 66, "protection": 0}}
-                     }
-
-
-def roles_overall_inventory(roles, overall_inventory):
-    print(f"{roles}")
-    for item in overall_inventory[roles]:
-        description = overall_inventory[roles][item]["description"]
-        damage = overall_inventory[roles][item]["damage"]
-        protection = overall_inventory[roles][item]["protection"]
-        print(f"-{item}")
-        print(f"{description}")
-        print(f"damage: {damage}")
-        print(f"protection: {protection}")
-
-
-def beginner_weapon(role):
-        if role == "1":
-            print("\n")
-            current_inventory = []
-            current_inventory.append("Sword, Shield")
-            for c_i in current_inventory:
-                print("Your current inventory is: ")
-                print(f"-{c_i}")
-        elif role == "2":
-            print('\n')
-            current_inventory = []
-            current_inventory.append("Long Sword")
-            for c_i in current_inventory:
-                print("Your current inventory is: ")
-                print(f"-{c_i}")
-        elif role == "3":
-            print("\n")
-            current_inventory = []
-            current_inventory.append("Staff")
-            for c_i in current_inventory:
-                print("Your current inventory is: ")
-                print(f"-{c_i}")
-        else:
-            print("invalid 5 input")
-
+print(map_look)
 
 def direction_to_go(role):
     while True:
@@ -136,6 +35,7 @@ def direction_to_go(role):
     # players can input "quit", to leave the game anytime
         elif direct == "quit":
             sys.exit("Goodbye!")
+        # check for invalid input
         else:
             print("invalid input")
 
@@ -144,7 +44,7 @@ def pick_your_role():
     while True:
         # print roles for player to input
         print("Knight Press '1', Swordsman Press '2', Mage Press '3'")
-        pick_ur_role(roles_to_pick)
+        character.pick_ur_role(roles_to_pick)
         role = input("Enter your choice: ")
         # after player input print out properties
         if role == "1":
@@ -170,6 +70,7 @@ def pick_your_role():
             break
         elif role == "quit":
             sys.exit("Goodbye!")
+        # check for invalid inputs
         else:
             print("invalid 3 input")
 
@@ -187,24 +88,25 @@ def actionA(role):
         elif actA == (actions_to_do_A[1]):
             sys.exit("Goodbye!")
         elif actA == (actions_to_do_A[2]):
-            beginner_weapon(role)
+            inventory.beginner_weapon(role)
         elif actA == (actions_to_do_A[3]):
             if role == "1":
                 print("\n")
-                roles_overall_inventory("All levels of weapons for Knight:",
+                inventory.roles_overall_inventory("All levels of weapons for Knight:",
                                         overall_inventory)
             elif role == "2":
                 print("\n")
-                roles_overall_inventory("All levels of weapons for Swordsman:",
+                inventory.roles_overall_inventory("All levels of weapons for Swordsman:",
                                         overall_inventory)
             elif role == "3":
                 print("\n")
-                roles_overall_inventory("All levels of weapons for Mage:",
+                inventory.roles_overall_inventory("All levels of weapons for Mage:",
                                         overall_inventory)
             else:
                 print("invalid 1 input")
         elif actA == (actions_to_do_A[4]):
-            game_map(maps)
+            map.game_map(maps)
+        # check for invalid input
         else:
             print("invalid 2 input")
             print("\n")
@@ -245,11 +147,11 @@ def actionB():
         elif choice == (actions_to_do_B[3]):
             sys.exit("Goodbye!")
         elif choice == (actions_to_do_B[4]):
-            beginner_weapon(role)
+            inventory.beginner_weapon(role)
         elif choice == (actions_to_do_B[5]):
             overall_inventory()
         elif choice == (actions_to_do_B[6]):
-            game_map(maps)
+            map.game_map(maps)
         else:
             print("invaild input")
             print("\n")
@@ -282,6 +184,8 @@ print("\n")
 print("Now you can start your advanture!")
 # start to enter the game loop
 actionA(role)
+
+
 
 
 
